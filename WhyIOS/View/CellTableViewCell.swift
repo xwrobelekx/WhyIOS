@@ -29,6 +29,14 @@ class CellTableViewCell: UITableViewCell {
     //MARK: - Helper Methods
     func updateViews(){
         //check threads
+        guard let post = newData else {return}
+        DispatchQueue.main.async {
+            self.nameLabel.text = post.name
+            self.cohortLabel.text = post.cohort
+            self.reasonLabel.text = post.reason
+        }
+    
+        
         
     }
     
